@@ -28,6 +28,12 @@ System testing is testing conducted on a complete, integrated system to evaluate
 
 #### What are the parts of a 3-tier architecture? <span style="color:red">Given the middle part(model) as N, how much lines of code is the total?</span>
 The 3-tier architecture is a client-server architecture in which presentation(user interface), application processing(functional process logic), and data management funcitons are physically separated. It provides a model by which developers can create flexible and reusable applications.
+The rule of thumb is that each business object needs
+- about 1 class to do the connect and translation to the DB
+- about 1 class to do the connection and interaction with the GUI
+- about half a class of "helper" utilities
+ 
+so 2.5 classes + the original = 3.5 N
 
 #### What is dialog independence?
 The decoupling of the Computer-Human Interface from the core application software.
