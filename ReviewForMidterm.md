@@ -368,6 +368,7 @@ Rule of three is a code refactoring rule of thumb to decide when a replicated pi
 ### Design patterns:
 #### What is the Composite pattern? Give an example and explain its components.
 The composite pattern is a partitioning design pattern. The composite pattern describes that a group of objects is to be treated in the same way as a single instance of an object. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
+e.g. Although the example is abstract, arithmetic expressions are Composites. An arithmetic expression consists of an operand, an operator (+ - * /), and another operand. The operand can be a number, or another arithmetic expresssion. Thus, 2 + 3 and (2 + 3) + (4 * 6) are both valid expressions.
 
 #### What is the cascade-delete policy? How can it be applied to editing directories in file system.s and data in SQL?
 Whenever rows in the master (referenced) table are deleted (or updated), the respective rows of the child (referencing) table with a matching foreign key column will be deleted (or updated) as well. This is called a cascade delete (or update).
