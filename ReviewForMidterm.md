@@ -33,7 +33,7 @@ The 3-tier architecture is a client-server architecture in which presentation(us
 The decoupling of the Computer-Human Interface from the core application software.
 
 #### What is data independence? Name a tool that supports data independence.
-The separation of data from the applications that use the data. DBMS implement data independence that hides the edetail of the physical data storage structure from user application, and with logical data independence, gives the feature of data abstraction.
+The separation of data from the applications that use the data. DBMS implement data independence that hides the detail of the physical data storage structure from user application, and with logical data independence, gives the feature of data abstraction.
 
 #### What is Brook's law?
 It is a claim about software project management that "adding manpower to a late software project makes it later." 
@@ -124,7 +124,8 @@ C++ can use classes to provide extensible types and package data and its related
 Concurrency, garbage collection, interface types, reflection, type switches. Because of garbage collection, it makes interfaces easier to specify, and also make concurrency more automatic without worry about the ownerships of memory piece, which save lots of programming effort in memory allocation and freeing.
 
 #### What is the technical role of the header file in C?
-To declare functions, macros and variables that are available.
+To declare functions, macros and variables that are available. 
+C function declarations and macro definitions to be shared between several source files.
 
 #### What is the process role of the header file?
 - To ensure that all developers use the same version of data layout definition or procedural code throughout the project.
