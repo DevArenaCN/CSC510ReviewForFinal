@@ -457,35 +457,122 @@ Feature missing: Inheritance; Polymorphism.
 ## Review 8
 ### Effort Estimation:
 #### What is the Delphi (expert) method of software effort estimation? When would you want to estimate using Delphi method?
+Use human expertise (possibly augmented with process guidelines, checklists, and data) to generate predictions.
+When I have human expertise in my team.
 
 #### What is the algorithmic (model based) method of software effort estimation? When would you want to estimate using algorithmic method?
+build models via data mining or via expert intuition then make use those models to make predictions about new projects e.g. data mining.
+
+good for finding the uncertainty in an estimate.  so when I want to know the uncertainty of the extimation.
+
 
 #### What is overestimation and underestimation? What are their effects on development? 
+When people overestimate, the feature will still get done, just at the expense of wasted time. When people underestimate, it's possible that the feature will never get done.
 
 #### State two problems with effort estimation and explain them.
+ - Problem1: Uncertainty
+  - We don't know how hard it will be to build software, until we build it.
+ - Problem2: Better,Faster,Cheaper (pick any two)
+  - Estimation is a multi-goal optimization problem
+ - Problem #3: Relucatance to Learn from Experience
+  - many commercial software engineers generalize from their first few projects to all future projects 2.
+  - commercial estimation â€œgurusâ€ rarely use lessons from past projects to improve their future estimates
+ 
+ 
 
 #### State three strategies, tacts, methods to solve the problems with effort estimation.
+- Strategies:
+  - Feature maturity : don't estimate software, reward delivery.
+  - Big bang : estimate at the start to allocate resources
+  - Spiral : project plan includes "stop! its not working!" points
+  - Many bangs : continuous small estimation (e.g. local stories, active learning)
+  - Lie : invent some nonsense number to make your manager happy
+  - Don't estimate : the #noestiamtion camp. But really they do estimate (but more with many bangs and not just Big Bang).
+
+- Tactics (so many; here's a sample):
+  - Parametric : fit to an pre-guest distribution; e.g. COCOMO
+  - Case-Based Reasoning : new estimates are variations of old (but similar examples)
+  - Planning poker : Don't estimate, just rank work most to least expensive
+  - Ensemble : Multiple estimates, combined (e.g. top-down, bottom-up, bagging, boosting)
+  - Stability studies : Do the sample "N" times using small variations in the assumptions.
+
+- Methods
+  - Delphi/Expert methods : use human expertise (possibly augmented with process guidelines, checklists, and data) to generate predictions 4
+   - (good for producing one estimate, not a range of estimates)'
+  - Algorithmic/Model-based methods : build models via data mining or via expert intuition then make use those models to make predictions about new projects e.g. data mining
+   - good for finding the uncertainty in an estimate).
+  - Combo : both the above.
 
 #### What is feature maturity? What kind of organizations are suitable for adopting this strategy?
+ don't estimate software, reward delivery.
+ 
+- Large organizations with an existing product and cash flow work as follows.
+- Productivity via social engineering
+- Developers compete to get their new feature mature enough to add into existing platform.
+- The "wining" developers are rewarded (financially at annual review time, with promotions) if their features make it in.
 
 #### What are the characteristics of the big bang effort estimation?
+estimate at the start to allocate resources
+- Traditional method for large government projects
+- Needed when development part of very large resource allocations (e.g. CLCS)
+- Standard practice is to build two estimates:
+  - The one you show the client (so you can get the estimate)
+  - The real one (so if you get the work you know how much trouble you are in if you get the work).
+- Major weakness: If the scope or technology changes during the period of the project, then the big bang's estimates will be wildly inaccurate.
+- 
 
 #### What are the properties of the spiral model? How does it deal with the risk management issue?
+ - These "prototypes" are MUCH bigger than agile SRUMS. Weeks to months to years of work.
+ - After a few rounds of the spiral, project becomes a standard waterfall.
+ - There is a "commit partition" (shown left hand side). Projects are canned if we get to the commit point, and some critical functionality is still not working.
+- Hard to go Spiral if you work for an external software consultants who are struggling for jobs
+- Since any cancellation may be fatal to their plans.
 
 #### What kind of developer and/or development strategy is suited for leveraging of many bangs strategy? 
+- Make Starting Amount of Money Small; Deliver Working Software Often
+- Fund a Pilot That Delivers Working Software; Then Use Modeling to Forecast Schedule
+- Move From Contract Negotiation to Partnership
  
 #### What are the scenarios that facilitate the no estimation strategy? When is the case that it is not suitable to adopt no estimation?
+- A tempting for products that charge a per-user, per-month fee that are already cash-flow positive.
+  - I.e. If your organization makes enough money to run itself, and if you view time spent estimating as time not developing, then you might abandon estimates and just write code. T
+-  Not recommended when:
+  -  In a budget conscious environment
+  -  In a cost-cutting environment
+  -  When you are required to audit your cost decisions:
+
 
 #### Very briefly explain the following approaches to effort estimation: Big bang, can't use Delphi models, should use algorithmic models like COCOMO.
 
+
+
 #### You have to build a very large scale system for the government, which requires you to provide your estimate to the government for the funding. What kind of effort estimation strategy would you use and why?
 
+ Big Bang: estimate at the start to allocate resources
+- Traditional method for large government projects
+- Needed when development part of very large resource allocations (e.g. CLCS)
+- Standard practice is to build two estimates:
+  - The one you show the client (so you can get the estimate)
+  - The real one (so if you get the work you know how much trouble you are in if you get the work).
+
 ### Planning Poker:
+also called Scrum poker, is a consensus-based, gamified technique for estimating,
+
 #### What are the properties of planning poker?
+Does not estimate, but it ranks
+
+Poorly studied. Only a handful of studies. 
+
 
 #### What kind of software develoment strategy uses planning poker?
+ It is most commonly used in agile software development, in particular in Scrum and Extreme Programming.
+ 
  
 #### What is the purpose of using planning poker?
+The reason to use Planning poker is to avoid the influence of the other participants. 
+
+If a number is spoken, it can sound like a suggestion and influence the other participants' sizing. Planning poker should force people to think independently and propose their numbers simultaneously. This is accomplished by requiring that all participants show their card at the same time.
+
 
 ### COCOMO:
 #### For each of the follwoing pre-defined values in the COCOMO model, explain whether an increase in their individual values would result in a faster or slower development:
