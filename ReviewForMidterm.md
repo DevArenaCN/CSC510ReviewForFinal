@@ -576,21 +576,37 @@ If a number is spoken, it can sound like a suggestion and influence the other pa
 
 ### COCOMO:
 #### For each of the follwoing pre-defined values in the COCOMO model, explain whether an increase in their individual values would result in a faster or slower development:
-- [ ] Analyst Capability
-- [ ] Multi site development
-- [ ] Use of software tools
-- [ ] Product complexity
+- [ ] Analyst Capability: faster.
+- [ ] Multi site development: slower.
+- [ ] Use of software tools: faster.
+- [ ] Product complexity: slower.
 
 #### COCOMO is a parametric effort estimation method. Define parametric methods, using COCOMO as the example?
 
+The Constructive Cost Model (COCOMO) is an algorithmic software cost estimation model. It uses a basic regression formula with parameters that are derived from historical project data and current as well as future project characteristics.
+
+
 ### Case Based Reasoning:
 #### In what sense is case-based reasoning NOT a parametric method? When might case-based work better than parametric methods?
+- CBR seeks to emulate human recollection and adaptation of past experiences in order to find solutions to current problems.
+
+- CBR was first motivated by appeals to human cognition. 
+- Humans don't think, they remember.
+
+1. CBR has several advantages. Firstly, when the cache of past cases is updated and appended with additional cases, then a CBR system is instantly updated to the latest findings.
+
+2. Secondly, the output of a CBR is made on a ``case-by-case'' basis. That is, CBR does not offer some trite generalization over multiple examples. Rather, the advice it gives is specialized to the particular case being considered at the current time.
+
 
 #### Define MRE?
+Magnitude of Relative Error
+- mre = 100 * abs(predicted - actual) / actual
 
 #### An analyst offers a single MRE as the estimate of an error a project. What are the drawbacks with that single number?
+May not accurate. high bias.
 
 #### What are ways to generate expected ranges of estimates?
+
 
 #### From the following dataset, guesstimate the unknown value of Khours for the last data row with all the independent values given using 1 nearest neighbor. Assume that the new project does multisite development, use some, but not lots, of software tools, the product is very complex. Show all your work.
 ![Screen Shot 2016-03-09 at 2.55.18 PM.png](resources/23FF2E96089B5193A027DB8566C1946A.png)
