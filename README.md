@@ -610,3 +610,155 @@ May not accurate. high bias.
 
 #### From the following dataset, guesstimate the unknown value of Khours for the last data row with all the independent values given using 1 nearest neighbor. Assume that the new project does multisite development, use some, but not lots, of software tools, the product is very complex. Show all your work.
 ![Screen Shot 2016-03-09 at 2.55.18 PM.png](resources/23FF2E96089B5193A027DB8566C1946A.png)
+
+
+##Review 9: Week of Mar 24
+Visual Notation for Programming
+Let us say that a 'useful diagram' is close to some code base. List two visual notations that are 'useful'. Justify your answer.
+Define the main parts of a state chart. Give a small example of state chart diagram of a person waiting for an elevator.
+Define the main parts of compartmental models. Give a small example using the scenario of filling your car with gasoline.
+Define the main parts of ER diagram. Give a small example using the scenario of placing a book order on Amazon.com.
+What are the limitations of compartmental models?
+How is UML similar to ER diagrams?
+How is UML not similar to ER diagrams?
+How does compartmental model differ from UML?
+Why it is bad to get the entity wrong early in the development cycle in ER diagrams?
+What kind of visual notation is the following diagram? State and explain all of it's parts.
+
+Propose and draw a class diagram equivalent to the above diagram.
+Why we should not build dialogs directly from the data?
+When and for what purposes should you use visual notations?
+Prolog
+Why prolog can be used in a mass distributed system easily?
+What is clause reordering in Prolog? Why is it important? Give an example. What other languages uses clause reordering?
+From the given facts below, write a function in Prolog to find a food's flavor. a) Use your function to find the flavor of 'velveeta'. b) Use your function to find the the foods of 'savory' flavor.
+
+food_type(velveeta, cheese). food_type(ritz, cracker).
+food_type(spam, meat). food_type(sausage, meat).
+food_type(jolt, soda). food_type(twinkie, dessert).
+flavor(sweet, dessert). flavor(savory, meat).
+flavor(savory, cheese). flavor(sweet, soda).
+
+
+Consider the following facts and function in Prolog. Will the following two coloring result in 'Yes' or 'No' in Prolog?
+
+different(red, green). different(red, blue).
+different(green, red). different(green, blue).
+different(blue, red). different(blue, green).
+coloring(Alabama, Mississippi, Georgia, Tennessee, Florida) :-
+    different(Mississippi, Tennessee),
+    different(Mississippi, Alabama),
+    different(Alabama, Tennessee),
+    different(Alabama, Mississippi),
+    different(Alabama, Georgia),
+    different(Alabama, Florida),
+    different(Georgia, Florida),
+    different(Georgia, Tennessee).
+
+% Coloring 1
+Alabama = blue.
+Florida = green.
+Georgia = red.
+Mississippi = red.
+Tennessee = green.
+
+% Coloring 2
+Alabama = red.
+Florida = green.
+Georgia = green.
+Mississippi = red.
+Tennessee = blue.
+
+
+Explain what the following prolog code does.
+
+append([], List, List).
+append([Head|Tail], List, [Head|Rest]) :- append(Tail, List, Rest).
+
+
+A predicate is not a function - discuss.
+Requirements Engineering
+What is requirements document? What are the properties of requirements document?
+State the components of the requirements document structure and explain them.
+Define functional requirements. Give an example.
+Define non-functional requirements. Give an example.
+Define product constraints. Give examples.
+State and explain three types of product constraints.
+What are the issues encountered in product requirements.
+What are the identifiable requirements classes. Explain and give examples for each.
+What is a stakeholder in software?
+Why are stakeholders important when reasoning about software?
+##Review 10: Week of Mar 31
+Testing
+Define functional or black box testing.
+Define structural or white box testing.
+State three differences between functional and structural testing.
+What is the state explosion problem? Explain in the context of testing. What strategy can be adopted to tackle this problem?
+What is random testing?
+What are the advantages of random testing?
+What are the disadvantages of random testing?
+What are independent testable features? Give example from a multifunction calculator.
+What are representative values?
+What are equivalent classes? How can we select representatives from equivalent classes?
+What are the heuristics for prioritizing tests?
+Heuristics for testing
+What are the heuristics for deteting bug in code? State three and explain in detail.
+What is Gunes Koru's heuristic for detecting bugs by inspecting less code? Try to justify why the Koru method might work.
+What are different inspection methods used for detecting bug in code? State and explain each.
+Define all pairs. Given limitations in human cognitive ability and finite testing budgets, justify why all-pairs might be an interesting test strategy.
+Show the error in the following output for all pairs of 5 booleans. Explain why it is an error and fix the error. (Note: in the following "0" means "dont care")
+
+((2 2 1 1 1)
+ (2 1 2 2 2)
+ (1 2 2 1 2) 
+ (1 1 1 2 1)
+ (0 2 2 2 2)
+ (0 1 1 1 2))
+
+
+##Review 11: Week of April 7
+White-box Testing
+Define the nodes in a control flow graph.
+	A graphical representation of all paths that might be traversed through a program during its execution. 
+	In a control flow graph each node in the graph represents a basic block, i.e. a straight-line piece of code without any jumps or jump targets; jump targets start a block, and jumps end a block. Directed edges are used to represent jumps in the control flow. There are, in most presentations, two specially designated blocks: the entry block, through which control enters into the flow graph, and the exit block, through which all control flow leaves
+Define the nodes in a data flow graph.
+	nodes are computations that send and receive data messages
+Given the following program, draw the control flow graph for it.
+
+function P return INTEGER is
+begin
+    X, Y, INTEGER;
+    READ(X); READ(Y);
+    while (X > 10) loop
+        X := X - 10;
+        exit when X = 10;
+    end loop;
+    if (Y < 20 and then X mod 2 = 0) then
+        Y := Y + 20;
+    else
+        Y := Y - 20;
+    end if;
+    return 2*X + Y;
+end P
+Given the following program, provide tests that gets you greater than 50% and less than 100% statemnet coverage.
+
+
+printSum(int a, int b) {
+    int result = a + b;
+    if (result > 0)
+        printCol("red", result);
+    else if (result < 0)
+        printCol("blue", result);
+    else
+        printCol("green", result);
+}
+
+
+Give an example where 100% statement coverage is required?
+In the above program, what statement coverage is achieved from each of the following test cases:
+a = 2, b = 5
+a = -3, b = -6
+Both of the above.
+Define branch coverage.
+'100% Branch coverage ensures 100% statement coverage' - discuss.
+Define semantic coverage. What kind of testing methods can be used to achieve semantic coverage?
