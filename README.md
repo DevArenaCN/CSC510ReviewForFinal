@@ -643,29 +643,65 @@ BUT:
 
 #### 3. Define the main parts of compartmental models. Give a small example using the scenario of filling your car with gasoline.
 Stocks, flows, stuff sloshing around some pipes.
+- Flows change stuff (and stuff is called Stocks).
+- Stocks are real-valued variables , some entity that is accumulated over time by inflows and/or depleted by outflows.
+- To code a CM,
+- sum the in and outflows around each stock;
+- multiply that by the time tick dt
+- add the result back to the stock
+- e.g. v.C += dt*(u.q - u.r)
+
 
 #### 4. Define the main parts of ER diagram. Give a small example using the scenario of placing a book order on Amazon.com.
 User table, Order table, Book table
+Main parts:
+- nentities:which are objects or concepts that can have data stored about them
+- the relationship between those entities
+- and the cardinality, which defines that relationship in terms of numbers.
+- Entities: It can be any person, object, event or concept about which the data needs to be stored or maintained.
+- Attributes: Characteristics of the entities are referred to as attributes.
+- Relationships: It describes the association between the entities.
+
 	
 #### 5. What are the limitations of compartmental models?
 Many (most) programming tasks are timeless. So CM is not applicable to general models.
 
+
 #### 6. How is UML similar to ER diagrams?
 The entity model provided by ER and UML class diagrams is almost the same, they both provide information about relationships.
+They are often used to graphically represent the logical structure of a database.
+(http://www.differencebetween.info/difference-between-uml-and-erd)
+Both are graphical models
+
 
 #### 7. How is UML not similar to ER diagrams?
 While both models provide for relationships, UML can be more descriptive in its relationships which often reflect some sort of action, behavior, or complex relationships such as interface implementation or inheritance. ERD relationships, on the other hand, are all about keys and multiplicity.
+(http://www.differencebetween.info/difference-between-uml-and-erd)
 
 #### 8. How does compartmental model differ from UML?
 UML deals with architecture, rather than with the whole system.
+- Compartmental model is time-sensitive and mainly used in business process, UML is used in object-oriented software design.
+- UML : using graph structure to describe a system , which is not time sensitive.
+
 
 #### 9. Why it is bad to get the entity wrong early in the development cycle in ER diagrams?
+
 
 #### 10. What kind of visual notation is the following diagram? State and explain all of it's parts.
 CRC card.
 ![Screen Shot 2016-05-02 at 9.35.39 PM.png](resources/Screen Shot 2016-05-02 at 9.35.39 PM.png)
+-It’s a CRC cards, The first line is the class name, and sub boxes are responsibilities and collaborators of the diagram.
 
 #### 11. Propose and draw a class diagram equivalent to the above diagram.
+Class diagrams are the most common diagrams used in UML. Class diagram consists of classes, interfaces, associations and collaboration.
+
+Class diagrams basically represent the object oriented view of a system which is static in nature.
+
+Active class is used in a class diagram to represent the concurrency of the system.
+
+Class diagram represents the object orientation of a system. So it is generally used for development purpose. This is the most widely used diagram at the time of system construction.
+
+
 
 #### 12. Why we should not build dialogs directly from the data?
 Concurrency, safety.
@@ -689,6 +725,7 @@ with spurious detail (see case study at end on modelitis)
 
 ### Prolog
 #### 1. Why prolog can be used in a mass distributed system easily?
+Because the variables’ scope is till the end of the line, so they won’t interfere
 
 #### 2. What is clause reordering in Prolog? Why is it important? Give an example. What other languages uses clause reordering?
 When declaring clauses in prolog (specifically recursive ones), the ordering of the clause is important. Consider the following prolog program:
@@ -706,7 +743,10 @@ Clearly the second is more efficient than the first, simply because of the order
 
 #### 5. Explain what the following prolog code does.
 
+
 #### 6. A predicate is not a function discuss.
+(http://math.stackexchange.com/questions/315936/predicate-vs-function)
+Predicate returns true or false, while functions return values.
 
 ###Requirements Engineering
 ####1. What is requirements document? What are the properties of requirements document?
@@ -774,16 +814,24 @@ restrictions & limitations that apply to the product & problem
 • Requirements which change during development or when the system is in use. E.g. In a hospital, requirements derived from healthcare policy
 
 #### 9. What is a stakeholder in software?
+Who will use the software directly or indirectly.
 
 #### 10. Why are stakeholders important when reasoning about software?
+
 
 ##Review 10: Week of Mar 31
 Testing
 Define functional or black box testing.
+- We focus on the function testing to see if this module is working or not , if it achieves some function or not, and if there is some required feature missing , we ignore how it is being written inside the module 
+
 Define structural or white box testing.
+- Looks inside of the software, Unit and integration testing, test all the small unit in the module
 State three differences between functional and structural testing.
+
 What is the state explosion problem? Explain in the context of testing. What strategy can be adopted to tackle this problem?
 What is random testing?
+Random testing is a black-box software testing technique where programs are tested by generating random, independent inputs. Results of the output are compared against software specifications to verify that the test output is pass or fail. Pick random inputs uniformly
+
 What are the advantages of random testing?
 What are the disadvantages of random testing?
 What are independent testable features? Give example from a multifunction calculator.
