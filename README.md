@@ -984,12 +984,17 @@ printSum(int a, int b) {
     else
         printCol("green", result);
 }
-
+-printSum(-1,1)
 
 Give an example where 100% statement coverage is required?
+-printSum(1,0)
+-printSum(-1,0)
+-printSum(-1,1)
 In the above program, what statement coverage is achieved from each of the following test cases:
 a = 2, b = 5
+- 3/7
 a = -3, b = -6
+- 4/7
 Both of the above.
 Define branch coverage.
 '100% Branch coverage ensures 100% statement coverage' - discuss.
