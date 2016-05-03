@@ -659,6 +659,36 @@ While both models provide for relationships, UML can be more descriptive in its 
 #### 8. How does compartmental model differ from UML?
 UML deals with architecture, rather than with the whole system.
 
+#### 9. Why it is bad to get the entity wrong early in the development cycle in ER diagrams?
+
+#### 10. What kind of visual notation is the following diagram? State and explain all of it's parts.
+CRC card.
+![Screen Shot 2016-05-02 at 9.35.39 PM.png](resources/Screen Shot 2016-05-02 at 9.35.39 PM.png)
+
+#### 11. Propose and draw a class diagram equivalent to the above diagram.
+
+#### 12. Why we should not build dialogs directly from the data?
+Concurrency, safety.
+
+#### 13. When and for what purposes should you use visual notations?
+- Visual systems are more motivating for beginners than textual systems.
+- In the case of spatial reasoning problems (e.g. finding an "as the crow flies" path between two points on a paper), a picture may indeed be worth 10,000 words. Given some 2D representation of a problem (e.g. an array representation), spatial reasoning can make certain inferences very cheaply.
+- Also, illstructured diagramming tools are a very useful tool for brainstorming ideas
+
+Other notes about diagram:
+● Many software engineering and knowledge engineering problems are not inherently
+spatial.
+● Many visual programming systems do not support mucking around with illstructured
+approach to brainstorming.
+● Claims as to the efficacy of VP systems have been poorly documented.
+● Diagrams often overelaborated
+with spurious detail (see case study at end on modelitis)
+● Diagramming can work well for small tasks but scale up is a problem
+● Writing diagrams can be slow, Getting all that detail
+● Diagrams are be completed (hooray!) and still miss important aspects of the system
+
+
+
 
 ##Review 10: Week of Mar 31
 Testing
