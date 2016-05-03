@@ -613,9 +613,8 @@ May not accurate. high bias.
 
 
 ##Review 9: Week of Mar 24
-#### Visual Notation for Programming
-1. Let us say that a 'useful diagram' is close to some code base. List two visual notations that
-are 'useful'. Justify your answer.
+### Visual Notation for Programming
+#### 1. Let us say that a 'useful diagram' is close to some code base. List two visual notations that are 'useful'. Justify your answer.
 	- 1) State charts: Directly translatable to executable code.
 	Statechart diagrams are useful for modelling the lifetime of an object.
 	A statechart diagram shows flow of control from state to state.
@@ -635,6 +634,31 @@ are 'useful'. Justify your answer.
 			- Stocks are realvalued variables , some entity that is accumulated over time by inflows and/or depleted by outflows.
 		- b. Note that the model is just some Python code so we can introduce any shortcut function (e.g. saturday).
 		- c. Can be used to model (e.g.) timedependent business processes But: many (most) programming tasks are timeless. So CM is not applicable to general models.
+		
+#### 2. Define the main parts of a state chart. Give a small example of state chart diagram of a person waiting for an elevator.
+	- Black dot = state
+	- Dashed lines: parallel work
+	- Words on arcs: transition guards
+	- Solid line: nested substate machines (and all transitions on superstates apply to substates)
+
+#### 3. Define the main parts of compartmental models. Give a small example using the scenario of filling your car with gasoline.
+	Stocks, flows, stuff sloshing around some pipes.
+
+#### 4. Define the main parts of ER diagram. Give a small example using the scenario of placing a book order on Amazon.com.
+	User table, Order table, Book table
+	
+#### 5. What are the limitations of compartmental models?
+	Many (most) programming tasks are timeless. So CM is not applicable to general models.
+
+#### 6. How is UML similar to ER diagrams?
+	The entity model provided by ER and UML class diagrams is almost the same, they both provide information about relationships.
+
+#### 7. How is UML not similar to ER diagrams?
+	While both models provide for relationships, UML can be more descriptive in its relationships which often reflect some sort of action, behavior, or complex relationships such as interface implementation or inheritance. ERD relationships, on the other hand, are all about keys and multiplicity.
+
+#### 8. How does compartmental model differ from UML?
+	UML deals with architecture, rather than with the whole system.
+
 
 ##Review 10: Week of Mar 31
 Testing
