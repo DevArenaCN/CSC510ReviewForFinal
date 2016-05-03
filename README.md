@@ -676,19 +676,106 @@ Concurrency, safety.
 - Also, illstructured diagramming tools are a very useful tool for brainstorming ideas
 
 Other notes about diagram:
-● Many software engineering and knowledge engineering problems are not inherently
+- Many software engineering and knowledge engineering problems are not inherently
 spatial.
-● Many visual programming systems do not support mucking around with illstructured
+- Many visual programming systems do not support mucking around with illstructured
 approach to brainstorming.
-● Claims as to the efficacy of VP systems have been poorly documented.
-● Diagrams often overelaborated
+- Claims as to the efficacy of VP systems have been poorly documented.
+- Diagrams often overelaborated
 with spurious detail (see case study at end on modelitis)
-● Diagramming can work well for small tasks but scale up is a problem
-● Writing diagrams can be slow, Getting all that detail
-● Diagrams are be completed (hooray!) and still miss important aspects of the system
+- Diagramming can work well for small tasks but scale up is a problem
+- Writing diagrams can be slow, Getting all that detail
+- Diagrams are be completed (hooray!) and still miss important aspects of the system
 
+### Prolog
+#### 1. Why prolog can be used in a mass distributed system easily?
 
+#### 2. What is clause reordering in Prolog? Why is it important? Give an example. What other languages uses clause reordering?
+When declaring clauses in prolog (specifically recursive ones), the ordering of the clause is important. Consider the following prolog program:
+	numeral(succ(X)) :numeral(X).
+	numeral(0).
+If we want to generate numerals by giving it the query: numeral(X). This program would not halt because the program is going to generate using the first clause which will recurse indefinitely. If we reverse the order, the second rule will satisfy and give 0. This concept is also extended to another semilogical language SQL, a very good example is the query: find all american cousins of Sally. This can be achieved through two approaches:
+1. Find all americans then find among them the cousins of Sally.
+2. Find all cousins of Sally and then find the american ones among them.
+Clearly the second is more efficient than the first, simply because of the order of the queries.
 
+#### 3. From the given facts below, write a function in Prolog to find a food's flavor. a) Use your function to find the flavor of 'velveeta'. b) Use your function to find the the foods of 'savory' flavor.
+	flavor_food(flavor, food) :flavor(flavor, type), food_type(food, type).
+#### 4. Consider the following facts and function in Prolog. Will the following two coloring result in 'Yes' or 'No' in Prolog?
+1: yes; 2: no
+
+#### 5. Explain what the following prolog code does.
+
+#### 6. A predicate is not a function discuss.
+
+###Requirements Engineering
+####1. What is requirements document? What are the properties of requirements document?
+- 1) The official statement of what is required of the system developers.
+- 2) Should include both a definition and a specification of requirements; It is NOT a design document; As far as possible, it should set of WHAT the system should do rather than HOW it should do it; Also, it should have tests that can be applied incrementally.
+#### 2. State the components of the requirements document structure and explain them.
+- 1) Nonfunctional
+requirements definition
+ - Define constraints on the system and the development process
+ - Add in notes for the commit partition here
+- 2) Constraints
+ - Add in notes for the commit partition here
+- 3) System evolution
+ - Define fundamental assumptions on which the system is based and anticipated changes
+- 4) Requirements specification
+ -Detailed specification of functional requirements
+- 5) Appendices
+ - System hardware platform description
+ - Database requirements (as an ER model perhaps)
+- 6) Index
+
+#### 3. Define functional requirements. Give an example.
+the functionality of the product
+- Scope of the Product defines the product boundaries and its connections to adjacent systems;
+- Functional & Data Requirements things the product must do and the data manipulated by the functions
+
+#### 4. Define non-functional requirements. Give an example. the products qualities
+- Look & Feel Reqt’s the intended appearance
+- Usability Reqt’s based on the intended users
+- Performance Reqt’s how fast, big, accurate, safe reliable, etc.
+- Operational Req’ts the product’s intended operating envt.
+- Maintainability & Portability Reqt’s how changeable the product must be
+- Security Reqt’s the security, confidentiality & integrity of the product
+- Cultural & Political Reqt’s human factors
+- Legal Reqt’s conformance to applicable laws
+
+#### 5. Define product constraints. Give examples.
+restrictions & limitations that apply to the product & problem
+
+#### 6. State and explain three types of product constraints.
+- Purpose of Product - the reason for building it and the business advantage if we do so
+- Stakeholders - the people with an interest in the product
+- Users - the intended endusers, & how they affect the product’s usability
+- Requirements Constraints - limitations on the project & restrictions on product’s design
+- Naming Conventions & Definitions vocabulary of the product
+- Relevant Facts - outside influences that make some difference to this product
+- Assumptions - that the developers are making
+
+#### 7. What are the issues encountered in product requirements.
+- Open Issues - as yet unresolved issues w/ a possible bearing on the product’s success
+- Off-the-Shelf Solutions - components that may be used instead of building something
+- New Problems - caused by the introduction of new product
+- Tasks - things to be done to bring the product into production
+- Cutover - tasks to convert from existing systems
+- Risks - the risks the project is most likely to face
+- Costs - early estimates of cost or effort needed to build it
+- User Documentation - plan for building user documentation
+- Waiting Room - req’ts to be included in future releases
+
+#### 8. What are the identifiable requirements classes. Explain and give examples for each.
+- 1) Enduring requirements
+• Stable requirements derived from the core activity of the customer organization. E.g. a hospital will always have doctors, nurses, etc.
+• May be derived from domain models
+- 2) Volatile requirements
+• Requirements which change during development or when the system is in use. E.g. In a hospital, requirements derived from healthcare policy
+
+#### 9. What is a stakeholder in software?
+
+#### 10. Why are stakeholders important when reasoning about software?
 
 ##Review 10: Week of Mar 31
 Testing
