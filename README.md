@@ -419,6 +419,7 @@ Highly structured static data of high maintenance cost.
 4. Run tests(GREEN): check pass or adjust otherwise
 5. Refractor code: clean up growing code regularly.
 
+
 #### What are the advantages and disadvantages of Test Driven Development? List and explain three.
 Advantage:
 - Offer more than just simple validation of correctness, but can also drive the design of a program.
@@ -426,15 +427,31 @@ Advantage:
 - Total code implementation time could be actually shorter.
 - Lead to more modularized, flexible, and extensible code.
 
+- Avoid over-engineering. I have a tendency to "throw in" functionality I "know" I'm "going to need". Making one red test green (along - with the list of future tests) helps me implement just enough. I need to find a new way to stay focused.
+- API feedback. Get quick feedback about my API decisions.
+- Logic errors. Catches pesky errors.
+- Documentation. Communicate how I expect APIs to be used and to record what I was thinking during development.
+- Never feel overwhelmed. With TDD, even if I couldn't imagine an implementation I could almost always figure out how to write a test (finding the next "step up the mountain"). Drive the design of a program.
+- Separate interface from implementation thinking. I have a tendency to pollute API design decisions with implementation speculation. - TDD separates the two levels of thinking while still providing rapid feedback between them.
+- Agreement. A way to be precise with a programming partner about what problem I'm solving.
+- Less anxiety. TDD gives me an instantaneous "Is Everything Okay?" button.
+
 Disadvantage:
 - Unit tests are smalll while function tests are much larger. 
-- Many tests may be informative.
+- Many tests may be uninformative.
+
+- Notes that unit tests are very small while function tests (aka system tests) are much larger, much more complex. Much slower to run, not the kind of thing to give you instant feedback.
+
+"Tests should be designed with great care. Business people, rather than programmers, should design most functional tests. Unit tests should be limited to those that can be held up against some â€œthird-partyâ€ success criteria."
+"If you have a large unit test mass, evaluate the feedback loops in your development process. Integrate code more frequently; reduce the build and integration times; cut the unit tests and go more for integration testing. "
 
 #### A company shows you their new very fast edit/compile/run tool for some language. They claim that the language will significantly reduce software development time. Based on the theory presented in this class, would you doubt that claim. Justify.
 
-
 #### What are the heuristics for not testing all the time?
 Evaluate the feedback loops in your development process. Integrate code more frequentyly. Reduce the build and integration times. Cut the unit tests and go more for integration testing.
+
+Most tests are uninformative (less that 1% fail)
+So now they track the effectiveness of each test (i.e. how many bugs they found in the past) And they run, at higher frequency, those "informative" tests.
 
 #### What is a mock in Test Driven Development? What purpose does it serve?
 A mock is a stand-in for a real module. It doesn’t contain any real functionality but rather imitates a module’s interface. When used in a test, a mock intercepts calls between the module under test and the mocked module. If the function being called has a return value, the mock for that function will also return a value as specified in the test. A programmer typically creates a mock object to test the behavior of some other object, in much the same way that a car designer uses a crash test dummy to simulate the dynamic behavior of a human in vehicle impacts.
@@ -473,6 +490,8 @@ Don't Repeat Yourself. Layers are not really separated, so much interaction.
 
 #### What is the Visitor pattern? Give an example and explain its components.
 It is a way of separating an algorithm from an object structure on which it operates. A practical result of this separation is the ability to add new operations to existing object structures without modifying those structures.
+- Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
+- Visitor implements "double dispatch". OO messages routinely manifest "single dispatch" - the operation that is executed depends on: the name of the request, and the type of the receiver. In "double dispatch", the operation executed depends on: the name of the request, and the type of TWO receivers (the type of the Visitor and the type of the element it visits).
 
 #### How can polymorphism solve the problem of OO abuse bad smell in switch statements?
 Relatively rare use of switch and case operators is one of the hallmarks of object-oriented code. Often code for a single switch can be scattered in different places in the program. When a new condition is added, you have to find all the switch code and modify it. As a rule of thumb, when you see switch you should think of polymorphism. Create subclasses matching the branches of the conditional. In them, create a shared method and move code from the corresponding branch of the conditional to it. Then replace the conditional with the relevant method call. The result is that the proper implementation will be attained via polymorphism depending on the object class.
