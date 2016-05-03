@@ -125,6 +125,7 @@ Software is complex and has lots of bugs. A software system with N modules has $
 #### In practice, software effort does not grow exponentially with size (LOC). Give 2 reasons why this might be so.
 High-quality flexible and reusable codes. Powerful and smart software development tools. Mature testing strategies.
 - Usage biased the same way as the construction of SE; follow good practices; Reuse of code and modules; Architectures;
+
 ### C, Go, C++:
 #### C++ and Go are variations of which language?
 C
@@ -172,7 +173,7 @@ Trans compile to JavaScript
 ### Typed languages:
 #### Briefly explain compile-time type inference concept of programming languages. Give an example.
 It refers to the automatic deduction of the data type of an expression at the compile time. It limit the values a particular exprssion can take on at run-time.
-Number -> float or int for operator '+'
+Number -> float or int for operator '+';  modulus % integer
 
 #### How might compile time type inference reduce error rates in SE?
 Reduce the mismatch between data type and data value. Automatically select the data type according to the operations.
@@ -182,7 +183,9 @@ Reduce the mismatch between data type and data value. Automatically select the d
 It refers to the high level structures of a software system, the discipline of creating such structures, and the documentation of these structures. It is about making fundamental structural decisions that are costly to change once implemented. It is also the space within which we can conduct massive experimentation.
 
 #### Project1 has good architecture and project2 has bad architecture. What might we observe in one of those projects and not in the other?
-Reasonable logic structure, complete and readable documentation. Layered structure for divisibility.
+- Reasonable logic structure, 
+- complete and readable documentation. 
+- Layered structure for divisibility.
 
 ### Architectures: Case studies:
 #### What is the net-neutrality rule in a packet switching network architecture?
@@ -197,13 +200,19 @@ Blackboard:
 - Knowledge sources: highly specialized modules with their own representation
 - Control components: selects, configures and execute knowledge sources.
 
-Online forum as application.
+- Global database called blackboard; 
+- logically independent sources of knowledge called knowledge source. 
+- knowledge source respond to changes on blackboard; There’s no control flow and knowledge source are self-activating.
+
+Online forum as application; computer vision;
 
 Publish-Subscribe is a messaging pattern where publishers don't program the messages to be sent directly to specific receivers, but instead characterize the messages into classes without knowledge of subscribers. And similarly, subscribers express their interest in classes and only receive messages of their interest without knowledge of the publishers.
 
 Publishers and subscribers could build the knowledge sources of their common interests, and the message matching mechanism can serve as the blackboard and control components.
 
 ####Layered system.s: What are layered systems? Give an example of a layered system architecture and list its layers? State two advantages of layered architecture and explain them? State two disadvantages of layered architecture and explain them? What limitations does the LAMP architecture has? How does MEAN try to solve them?
+Partitions the concerns of the application into stacked groups
+
 Use layers for allocating the different concerns and responsibilities of a system:
 - Presentation layer
 - Application layer
@@ -214,10 +223,22 @@ Advantages:
 1. Abstraction. Abstract the view of the system. 
 2. Reusable. No dependences on higher layers.
 
+	Abstraction;
+	Encapsulation;
+	Clearly defined functional layers;
+	High cohesion;
+	Loose coupling;
+	Separation of concerns;
+	Event-based notification;
+	Delegated event handling;
+
 Disadvantage:
 1. Need clearly define layer functions. 
 2. No knowledge of detail of other layers. Hard to modify.
 
+	More communication between layers;
+	Adds complexity to a simple project;
+	
 LAMP: 
 - MySQL is a relational database
 - Different programming languages between layers. Hard to rewrite codes.
@@ -228,11 +249,14 @@ MEAN:
 - All implemented in Javascript and support cross-platform
 - Easier to work on both server and client sides.
 
+Difficult to integrate; MEAN one language up and down the stack (javascript) so (1) faster integrated testing; and (2) faster invention of new patterns.
+
 #### MVC: Define MVC? Give an example of the MVC architecture. List the componenets and their roles.
 Model-View-Controller. It isolates the application logic from the user interface layer and separates the concerns.
 - Model: directly manages the data, logic and rules of the application.
 - View: Display the representations of information to users.
 - Controller: controls the interaction between model and view.
+A file explorer;  Model, tree structured directories; View, window containing current directories; Controller, make/delete directories;
 
 #### Pipe & filter: What problem did the pipe & filter architecture tackle upon its creation? Why pipe&filter architecture is linear? What are the properties of pipe&filter architecture? Give an example that uses pipe and filter architecture? What are the advantages of pipe&filter architecture? What are some of the disadvantages?
 Processing the output of one program as the input of another.
@@ -241,16 +265,40 @@ Properties:
 - Linear and one-directional.
 - Make every program a filter.
 
+Write programs that do one thing and do it well.
+UNIX has hundreds of domain specific-languages, each doing one little task.
+e.g. ls, cp, rm, and (see below) bash, make.
+Write programs to work together.
+Write programs to handle text streams, because that is a universal interface.
+Small is beautiful.
+Build a prototype as soon as possible.
+Choose portability over efficiency.
+Use shell scripts to increase leverage and portability.
+Avoid captive user interfaces.
+Make every program a filter.
+Read a file of text, determine the n most frequently used words, and print out a sorted list of those words along with their frequencies.
+tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed ${1}q
+
 Advantage:
 - Filters stand alone and can be treated as black boxes.
 - Simiplicity and low coupling.
 - Late binding. Construction of pipe and filter sequence can often be delayed until runtime.
 - Parallel or multitasking.
 
+* Filters stand alone and can be treated as black boxes. This isolation of functionality helps to ensure quality attributes such as information hiding, high cohesion, modifiability, and reuse.
+* Filters interact with other components in limited ways. This connection simplicity helps to ensure low coupling. Pipes and filters can be hierarchically composed. Higher order filters can be created from any combination of lower order pipes and filters.
+* The construction of the pipe and filter sequence can often be delayed until runtime (late binding). This permits a controller component to tailor a process based on the current state of the application.
+* Because the process performed by the filter is isolated from the other components in the system, it is relatively easy to run a pipe-and-filter system on parallel processors or in multiple threads on a single processor. parallelism
+
 Disadvantage:
 - Sequential order, less interactive.
 - High overhead of parsing and unparsing high-level information tokens.
 - Possible unlimited buffer size and system deadlock.
+
+* Because the problem is decomposed into sequential steps, a batch mentality is encouraged. It is difficult to create entire interactive applications using this style.
+* Filters often force the data to be represented in the lowest common denominator, typically byte or character streams. This means that if processing must be based on information tokens (words, lines, records), every filter may introduce overhead for parsing and unparsing the data stream.
+* If a filter can not produce any output until it has received all of its input, the filter will require a buffer of unlimited size. If fixed size buffers are used, the system could deadlock. A sort filter has this problem.
+
 
 #### CRUD: What is CRUD(SCRUD) concept? Where is it used?
 search, create, read, update, delete.
@@ -284,6 +332,10 @@ A dynamic, functional language designed for building scalable and maintainable a
 ### Functional Programming:
 #### What is currying in functional programming? Give an example and explain.
 Currying is when you break down a function that takes multiple arguments into a series of functions that take part of arguments. 
+* Calling a function with less than the required arguments. Currying is when you break down a function that takes multiple arguments into a series of functions that take part of arguments.
+Returns a specialized function 
+Eg: add and increase. increase is curried by specifying one argument as 1;
+* the technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument.
 
 ### SQL and NoSQL:
 #### What particular purpose SQL is optimized for ? Give three ways that SQL has this optimization.
@@ -291,6 +343,10 @@ Mantainabilty and Managing data in relational database system.
 - Relational constraints
 - Database normalization
 - Data integrity
+Maintainability of well structured data; 
+- SQL supports layered architectures that separate data and model, thus allowing developers to reorganize the data storage layer without messing up the business logic. 
+- SQL simplifies scripts by removing nested access paths. 
+- SQL removes a set of standard anomalies with long term storage (insert, delete, update anomalies)
 
 #### State three differences betweenn SQL and NoSQL?
 - tables vs documents
@@ -303,6 +359,9 @@ The process of efficiently organizing data in the database, by eliminating redun
 - Second normal form: no partial dependencies of any of the columns on the primary key.
 - Third normal form: all nonprimary fields are dependent on the primary key.
 
+process of organizing the columns (attributes) and tables (relations) of a relational database to minimize data redundancy.
+Normalization involves decomposing a table into less redundant (and smaller) tables without losing information; defining foreign keys in the old table referencing the primary keys of the new ones. The objective is to isolate data so that additions, deletions, and modifications of an attribute can be made in just one table and then propagated through the rest of the database using the defined foreign keys.
+
 #### What are the advantages and disadvantages of normalizaiton?
 Advantage:
 - Reduce data redundancy 
@@ -310,6 +369,10 @@ Advantage:
 - Group data logically
 - Smaller tables for faster maintainance
 - Join tables as needed (more flexible)
+(1)To free the collection of relations from undesirable insertion, update and deletion dependencies; avoid anomalies;
+(2)To reduce the need for restructuring the collection of relations, as new types of data are introduced, and thus increase the lifespan of application programs;
+(3)To make the relational model more informative to users;
+(4)To make the collection of relations neutral to the query statistics, where these statistics are liable to change as time goes by.
 
 Disadvantage:
 - Slow performance with complex relational join
@@ -345,7 +408,7 @@ Highly structured static data of high maintenance cost.
 ### ELM and JavaScript:
 ![Screen Shot 2016-03-09 at 2.09.34 PM.png](resources/C5A0673C0EA64593F6B77464A2D3037A.png)
 1. JS: event handler and callback; ELM: Signals
-2. MVC
+2. MVC (please explain)
 
 ## Review 5
 ### Test Driven Development:
