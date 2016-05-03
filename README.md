@@ -12,6 +12,7 @@ It suggests a sequential approach to software development that begins with custo
 - The product is ony finished a the end of the last phase.
 - Once the project is done, the product/service enteres into a maintenance phase.
 - Low overhead of the methodology compared to other models such as Agile.
+- siloed, serial, slow
 
 #### What are the different steps of the Waterfall model?
 ![Screen Shot 2016-03-09 at 11.34.05 AM.png](resources/5B400CCAA09B4ED534006F6DF7A3F2C8.png)
@@ -37,9 +38,11 @@ so 2.5 classes + the original = 3.5 N
 
 #### What is dialog independence?
 The decoupling of the Computer-Human Interface from the core application software.
+the separation of dialogue definition from dialogue execution
 
 #### What is data independence? Name a tool that supports data independence.
-The separation of data from the applications that use the data. DBMS implement data independence that hides the detail of the physical data storage structure from user application, and with logical data independence, gives the feature of data abstraction.
+- The separation of data from the applications that use the data. DBMS implement data independence that hides the detail of the physical data storage structure from user application, and with logical data independence, gives the feature of data abstraction.
+- It refers to the immunity of user applications to changes made in the definition and organization of data. Each higher level of the data architecture is immune to changes of the next lower level of the architecture. 
 
 #### What is Brook's law?
 It is a claim about software project management that "adding manpower to a late software project makes it later." 
@@ -100,9 +103,14 @@ Testing:
 
 #### For what kind of project would you use Agile? Explain
 Flexible product development with constant update.
+- constantly adding new features
+- feedback driven
+- limited time and resources for planning at the beginning
+- important decisions have to be made after the initiation of the project
 
 #### For what kind of project would you use Waterfall? Explain
-Highly structured projects in which after-the-fact changes are prohibitively costly, if not impossible 
+- Highly structured projects in which after-the-fact changes are prohibitively costly, if not impossible 
+- Lots of interim steps, great for funding large projects, defining cash flows even before any code is running
 
 #### What are the activities involved in DevOps?
 ![Screen Shot 2016-03-09 at 1.18.01 PM.png](resources/0CEDF248E5EB342D49B1A58A676C97BA.png)
@@ -112,10 +120,11 @@ Highly structured projects in which after-the-fact changes are prohibitively cos
 ### Theory:
 #### Why might, in theory, software development effort grow exponentially with size (LOC)?
 Software is complex and has lots of bugs. A software system with N modules has $N^2$ possible intraconnections, each of which must be designed and built and tested and maintained. 
+- state space grows exponentially to the number of variables; Intraconnection between different modules grows quadratically.
 
 #### In practice, software effort does not grow exponentially with size (LOC). Give 2 reasons why this might be so.
 High-quality flexible and reusable codes. Powerful and smart software development tools. Mature testing strategies.
-
+- Usage biased the same way as the construction of SE; follow good practices; Reuse of code and modules; Architectures;
 ### C, Go, C++:
 #### C++ and Go are variations of which language?
 C
@@ -140,20 +149,24 @@ C function declarations and macro definitions to be shared between several sourc
 - Save time by not needing to code extensive data layouts.
 
 #### Give a specific project that would use C? List two reasons, justify each.
-Develop an OS for wearable device. Performance, efficiency and maintanence.
+Develop an OS for wearable device. Performance, efficiency and maintanence. Programming in robotics; robots are controlled in real time, C is fast; Controlling robots requires programing with hardware, pointer and register operation in C is convenient;
 
 #### Give a specific project that would best not use C? List two reasons, justify each.
 Interactive data analysis. Not support cross-platform once compiled. Not able to run without compilation, lack of interaction.
+Web application; portability, security and maintenance.
 
 ### Coffee Script and JavaScript:
 #### How CoffeeScript is better than JavaScript?
 Better readability by simpler syntax. No more polluting global namespaces.
+Less verbose
 
 #### Why not to use CoffeeScript instead of JavaScript?
 Mixture of CS and JS.
+Steep learning curve; less support
 
 #### How is CoffeeScript implemented?
 The code compiles one-to-one into the equivalent JS code, and there is no interpretation at runtime.
+Trans compile to JavaScript
 
 ## Review 3
 ### Typed languages:
